@@ -1,10 +1,6 @@
-conf
-controllers
-filters
 io.mangoo.admin
 io.mangoo.annotations
 io.mangoo.authentication
-io.mangoo.build
 io.mangoo.cache
 io.mangoo.configuration
 io.mangoo.core
@@ -14,7 +10,6 @@ io.mangoo.filters
 io.mangoo.i18n
 io.mangoo.interfaces
 io.mangoo.mail
-io.mangoo.maven
 io.mangoo.routing
 io.mangoo.routing.bindings
 io.mangoo.routing.handlers
@@ -22,8 +17,4 @@ io.mangoo.scheduler
 io.mangoo.templating
 io.mangoo.templating.directives
 io.mangoo.templating.methods
-io.mangoo.test
 io.mangoo.utils
-jobs
-main
-models
