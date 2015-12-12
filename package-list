@@ -12,7 +12,7 @@ io.mangoo.filters
 io.mangoo.filters.oauth
 io.mangoo.i18n
 io.mangoo.interfaces
-io.mangoo.mail
+io.mangoo.managers
 io.mangoo.models
 io.mangoo.routing
 io.mangoo.routing.bindings
