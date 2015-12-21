@@ -8,6 +8,7 @@ io.mangoo.core
 io.mangoo.crypto
 io.mangoo.enums
 io.mangoo.enums.oauth
+io.mangoo.exceptions
 io.mangoo.filters
 io.mangoo.filters.oauth
 io.mangoo.i18n
