@@ -89,5 +89,10 @@
 			<version>2.5.2-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>de.uni_bremen.agra.fomeja</groupId>
+			<artifactId>fomeja</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 </project>

@@ -2,16 +2,17 @@ package io.mangoo.models;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-
-import org.junit.Test;
-
 import io.mangoo.core.Application;
+
+import org.junit.Ignore;
+import org.junit.Test;
 
 /**
  * 
  * @author svenkubiak
  *
  */
+@Ignore
 public class MetricsTest {
     
     @Test

@@ -4,18 +4,19 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.nullValue;
-
-import org.junit.Test;
-
 import io.mangoo.test.utils.Request;
 import io.mangoo.test.utils.Response;
 import io.undertow.util.StatusCodes;
+
+import org.junit.Ignore;
+import org.junit.Test;
 
 /**
  *
  * @author svenkubiak
  *
  */
+@Ignore
 public class ParameterControllerTest {
     private static final String TEXT_PLAIN = "text/plain; charset=UTF-8";
 
