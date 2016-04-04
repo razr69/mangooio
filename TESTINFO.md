@@ -32,6 +32,6 @@ Coverage-Info
 Version   | Coverage  | Covered  | Missed  | Link
 --------- | --------: | -------: | ------: | ----
 *vanilla* | 75,7 %    | 11,046   | 3,548   | [Link](https://github.com/svenkubiak/mangooio.git)
-*crypto*  | 76,0 %    | 11,155   | 3,531   | [Link](https://dummy.com)
+*crypto*  | 76,0 %    | 11,155   | 3,531   | [Link](78316da9a114134f8caa38578edb9d2d7e2cebf7)
 
 *crypto*: Replaced [io.mangoo.crypto.CryptoTest.java](https://github.com/svenkubiak/mangooio/blob/master/mangooio-integration-test/src/test/java/io/mangoo/crypto/CryptoTest.java) with [io.mangoo.crypto.CryptoASCIIKeyTest.java](../master/mangooio-integration-test/src/test/java/io/mangoo/crypto/CryptoASCIIKeyTest.java) and [io.mangoo.crypto.CryptoNonASCIIKeyTest.java](../master/mangooio-integration-test/src/test/java/io/mangoo/crypto/CryptoNonASCIIKeyTest.java)
