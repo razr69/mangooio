@@ -5,6 +5,9 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.nullValue;
 import static org.mockito.Mockito.when;
+import io.mangoo.configuration.Config;
+import io.mangoo.core.Application;
+import io.undertow.server.handlers.sse.ServerSentEventConnection;
 
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
@@ -15,18 +18,16 @@ import org.glassfish.jersey.media.sse.EventListener;
 import org.glassfish.jersey.media.sse.EventSource;
 import org.glassfish.jersey.media.sse.InboundEvent;
 import org.glassfish.jersey.media.sse.SseFeature;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mockito;
-
-import io.mangoo.configuration.Config;
-import io.mangoo.core.Application;
-import io.undertow.server.handlers.sse.ServerSentEventConnection;
 
 /**
  *
  * @author svenkubiak
  *
  */
+@Ignore
 public class ServerEventManagerTest {
     private static String eventData;
     private static final String COOKIE_NAME = "TEST-AUTH";

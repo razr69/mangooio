@@ -29,12 +29,15 @@ import de.uni_bremen.agra.fomeja.utils.constraintmethods.StringMethods;
 @SuppressWarnings("unchecked")
 @RunWith(Parameterized.class)
 public class CryptoASCIIKeyTest {
+	private static final boolean VALIDATE_DATA = true;
+	private static final int DATA_LIMIT = 1<<14;
+
 	private static Crypto crypto;
 	private static final String base64Pattern = "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$";
 
 	@Parameters(name = "{index}: plainText = \"{0}\", key = \"{1}\"")
 	public static Collection<Object[]> parametersASCII() {
-		return new FomejaModelList<>(EncryptionDataASCIIKey.class, 1<<8);
+		return new FomejaModelList<>(EncryptionDataASCIIKey.class, VALIDATE_DATA, DATA_LIMIT);
 	}
 
 	@Parameter(0)
@@ -101,31 +104,7 @@ public class CryptoASCIIKeyTest {
 	 * @author Max Nitze
 	 */
 	public static class EncryptionDataASCIIKey {
-		private static char[] allowedASCIIChars;
-		private static int[] allowedASCIICharsMap;
-		private static char[] forbiddenASCIIChars;
-		static {
-			allowedASCIIChars = new char[] {
-					'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-					'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-					'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-					'!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/',
-					':', ';', '<', '=', '>', '?', '@',
-					'[', '\\', ']', '^', '_', '`',
-					'{', '|', '}', '~'
-			};
-
-			allowedASCIICharsMap = new int[1<<7];
-			for (int c : allowedASCIIChars)
-				allowedASCIICharsMap[c] = 1;
-
-			forbiddenASCIIChars = new char[(1<<7)-allowedASCIIChars.length];
-
-			int i=0;
-			for (char c=0; c<(1<<7); c++)
-				if (allowedASCIICharsMap[c] == 0)
-					forbiddenASCIIChars[i++] = c;
-		}
+		private static char[] forbiddenASCIIChars = new char[] { '\n', '\r' };
 
 		@Variable(order=0, alter=1)
 		private String plainText;
