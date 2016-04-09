@@ -30,7 +30,7 @@ import de.uni_bremen.agra.fomeja.utils.constraintmethods.StringMethods;
 @RunWith(Parameterized.class)
 public class CryptoASCIIKeyTest {
 	private static final boolean VALIDATE_DATA = true;
-	private static final int DATA_LIMIT = 1<<14;
+	private static final int DATA_LIMIT = 1<<2;
 
 	private static Crypto crypto;
 	private static final String base64Pattern = "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$";
@@ -53,6 +53,7 @@ public class CryptoASCIIKeyTest {
 
 	@Test
 	public void testEncryption() {
+		System.out.println("plainText: \"" + this.plainText.replaceAll("\0", "\\\\0") + "\" ; key: \"" + this.key.replaceAll("\0", "\\\\0") + "\"");
 		// when
 		String encrypt = crypto.encrypt(this.plainText);
 
@@ -105,6 +106,7 @@ public class CryptoASCIIKeyTest {
 	 */
 	public static class EncryptionDataASCIIKey {
 		private static char[] forbiddenASCIIChars = new char[] { '\n', '\r' };
+		private static char[] obligedASCIIChars = new char[] { '\t' };
 
 		@Variable(order=0, alter=1)
 		private String plainText;
@@ -139,6 +141,7 @@ public class CryptoASCIIKeyTest {
 		@Constraint
 		public boolean keyEncoding() {
 			return !StringMethods.hasAnyChar(this.key, forbiddenASCIIChars)
+					&& StringMethods.hasAllChars(this.key, obligedASCIIChars)
 					&& StringMethods.allCharsASCII(this.key);
 		}
 	}
