@@ -7,3 +7,5 @@ target/
 site/
 *.jar
 *.class
+log/
+
