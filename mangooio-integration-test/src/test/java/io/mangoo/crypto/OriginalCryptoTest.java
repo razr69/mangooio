@@ -20,8 +20,8 @@ import io.mangoo.core.Application;
 public class OriginalCryptoTest {
     private static Crypto crypto;
     private static final String base64Pattern = "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$";
-    private static final String plainText = "This\nis\ra super secret message!";
-    private static final String key = "My voice\nis\rmy password!$";
+    private static final String plainText = "This is a super secret message!";
+    private static final String key = "My voice is my password!$";
     
     @Before
     public void init() {
